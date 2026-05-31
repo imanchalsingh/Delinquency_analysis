@@ -1,10 +1,10 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-df = pd.read_csv("cleaned_dataset.csv")
+df = pd.read_csv("cleaned_data.csv")
 
 engine = create_engine(
-    "mysql+pymysql://root:cscorner@localhost/delinquency_analysis"
+    "mysql+pymysql://root:cscorner@localhost/delinquency_dataset"
 )
 
 df.to_sql(

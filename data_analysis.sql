@@ -1,6 +1,19 @@
-CREATE DATABASE delinquency_analysis;
+CREATE DATABASE delinquency_dataset;
 
-USE delinquency_analysis;
+USE delinquency_dataset;
+
+CREATE TABLE delinquency_data (
+    ID INT PRIMARY KEY,
+    Month_1 VARCHAR(20),
+    Month_2 VARCHAR(20),
+    Month_3 VARCHAR(20),
+    Month_4 VARCHAR(20),
+    Month_5 VARCHAR(20),
+    Month_6 VARCHAR(20),
+    Loan_Balance FLOAT,
+    Income FLOAT,
+    Credit_Card_Type VARCHAR(50)
+);
 
 SELECT
     COUNT(*)

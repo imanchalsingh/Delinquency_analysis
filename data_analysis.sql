@@ -2,18 +2,19 @@ CREATE DATABASE delinquency_dataset;
 
 USE delinquency_dataset;
 
-CREATE TABLE delinquency_data (
-    ID INT PRIMARY KEY,
-    Month_1 VARCHAR(20),
-    Month_2 VARCHAR(20),
-    Month_3 VARCHAR(20),
-    Month_4 VARCHAR(20),
-    Month_5 VARCHAR(20),
-    Month_6 VARCHAR(20),
-    Loan_Balance FLOAT,
-    Income FLOAT,
-    Credit_Card_Type VARCHAR(50)
-);
+CREATE TABLE
+    delinquency_data (
+        ID INT PRIMARY KEY,
+        Month_1 VARCHAR(20),
+        Month_2 VARCHAR(20),
+        Month_3 VARCHAR(20),
+        Month_4 VARCHAR(20),
+        Month_5 VARCHAR(20),
+        Month_6 VARCHAR(20),
+        Loan_Balance FLOAT,
+        Income FLOAT,
+        Credit_Card_Type VARCHAR(50)
+    );
 
 SELECT
     COUNT(*)
@@ -190,3 +191,24 @@ WHERE
     Loan_Balance > 0;
 
 -- 612
+-- Max income
+SELECT
+    MAX(Income) AS Highest_Income,
+    Age
+FROM
+    delinquency_data
+GROUP BY
+    Age
+ORDER BY
+    Highest_Income DESC;
+
+-- 199943
+-- Min income
+SELECT
+    MIN(Income) AS Lowest_Income
+FROM
+    delinquency_data
+WHERE
+    Income > 0;
+
+-- 15404
